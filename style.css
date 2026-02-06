@@ -43,47 +43,38 @@ img {
     transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* 1. HKBU Logo: Circle + 3D flip on hover (PPT key effect) */
+/* 1. HKBU Logo: 初始全灰度（黑色）+ hover恢复彩色+3D翻转（方案1） */
 img[alt*="HKBU"] {
-    filter: grayscale(100%); /* Initial B&W for contrast */
+    filter: grayscale(100%); /* 初始100%灰度，符合PPT Image Filter要求 */
     border: 3px solid #005ea5;
 }
 .img-container:hover img[alt*="HKBU"] {
-    filter: grayscale(0%);
-    transform: perspective(1000px) rotateY(180deg) scale(1.08);
+    filter: grayscale(0%); /* hover移除灰度，恢复彩色 */
+    transform: perspective(1000px) rotateY(180deg) scale(1.08); /* 3D翻转 */
 }
-/* Container switch to circle on hover */
+/* 容器hover变圆形（PPT创意形状） */
 .img-container:hover {
     clip-path: circle(50% at 50% 50%);
     box-shadow: 0 0 25px rgba(0, 94, 165, 0.4);
 }
 
-/* 2. Design Image (5.2): Rounded + Transparent + Grayscale + Hover Transform (PPT要求) */
+/* 2. Design Image (5.2): 圆角+半透明+灰度+hover变换（PPT要求） */
 img[alt*="Design"] {
     border: 3px solid #9b59b6;
-    /* 圆角效果（PPT要求） */
-    border-radius: 20px;
-    /* 半透明效果（PPT要求，0.8为半透明） */
-    opacity: 0.8;
-    /* 灰度滤镜（PPT要求，50%灰度） */
-    filter: grayscale(50%);
-    /* 取消原有旋转/斜切，仅保留PPT要求的变换 */
+    border-radius: 20px; /* 圆角 */
+    opacity: 0.8; /* 半透明 */
+    filter: grayscale(50%); /* 50%灰度 */
     transition: all 0.3s ease;
 }
 img[alt*="Design"]:hover {
-    /* 移除灰度（PPT要求） */
-    filter: grayscale(0%);
-    /* 恢复完全不透明（PPT要求） */
-    opacity: 1;
-    /* 轻微缩放变换（PPT要求的hover交互） */
-    transform: scale(1.05);
-    /* hover时调整圆角（增强交互） */
-    border-radius: 5px;
-    /* 保留边框颜色，移除多余斜切/旋转 */
+    filter: grayscale(0%); /* 移除灰度 */
+    opacity: 1; /* 恢复不透明 */
+    transform: scale(1.05); /* 轻微缩放 */
+    border-radius: 5px; /* hover调整圆角 */
     border-color: #9b59b6;
 }
 
-/* 3. Video iframe style (keep video responsive) */
+/* 3. Video iframe style (保留视频响应式) */
 iframe {
     display: block;
     margin: 30px auto;
