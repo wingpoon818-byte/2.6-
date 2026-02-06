@@ -24,13 +24,13 @@ p[align="center"] {
 }
 
 /* ========== PPT Required: Creative Image Shape + Animation ========== */
-/* Image container for shape transformation (PPT classic design) */
+/* Image container for HKBU Logo shape transformation */
 .img-container {
-    width: 50%;
+    width: 40%; /* 适配Logo尺寸，缩小容器更协调 */
     margin: 20px auto;
     overflow: hidden;
-    /* Initial polygon shape (trapezoid) */
-    clip-path: polygon(10% 0, 90% 0, 80% 100%, 20% 100%);
+    /* Initial trapezoid shape (PPT classic design) */
+    clip-path: polygon(15% 0, 85% 0, 80% 100%, 20% 100%);
     transition: all 0.7s ease-in-out;
 }
 
@@ -43,38 +43,39 @@ img {
     transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* 1. HKBU Logo: 初始全灰度（黑色）+ hover恢复彩色+3D翻转（方案1） */
+/* 1. HKBU Logo专属样式（方案1，适配品牌视觉） */
 img[alt*="HKBU"] {
-    filter: grayscale(100%); /* 初始100%灰度，符合PPT Image Filter要求 */
-    border: 3px solid #005ea5;
+    filter: grayscale(100%); /* 初始全灰度（符合PPT Image Filter） */
+    border: 3px solid #005ea5; /* 浸会大学品牌蓝，更贴合Logo */
+    background-color: #fff; /* 加白色背景，避免Logo透明区域显黑 */
 }
 .img-container:hover img[alt*="HKBU"] {
-    filter: grayscale(0%); /* hover移除灰度，恢复彩色 */
-    transform: perspective(1000px) rotateY(180deg) scale(1.08); /* 3D翻转 */
+    filter: grayscale(0%); /* hover恢复彩色，还原Logo品牌色 */
+    transform: perspective(1000px) rotateY(180deg) scale(1.05); /* 3D翻转+轻微缩放，不夸张 */
 }
-/* 容器hover变圆形（PPT创意形状） */
+/* Container switch to circle on hover (PPT creative shape) */
 .img-container:hover {
     clip-path: circle(50% at 50% 50%);
-    box-shadow: 0 0 25px rgba(0, 94, 165, 0.4);
+    box-shadow: 0 0 20px rgba(0, 94, 165, 0.3); /* 柔和阴影，贴合品牌风格 */
 }
 
-/* 2. Design Image (5.2): 圆角+半透明+灰度+hover变换（PPT要求） */
+/* 2. Design Image (5.2): Rounded + Transparent + Grayscale + Hover Transform */
 img[alt*="Design"] {
     border: 3px solid #9b59b6;
-    border-radius: 20px; /* 圆角 */
-    opacity: 0.8; /* 半透明 */
-    filter: grayscale(50%); /* 50%灰度 */
+    border-radius: 20px; /* Rounded image (PPT requirement) */
+    opacity: 0.8; /* Transparent (PPT requirement) */
+    filter: grayscale(50%); /* Grayscale filter (PPT requirement) */
     transition: all 0.3s ease;
 }
 img[alt*="Design"]:hover {
-    filter: grayscale(0%); /* 移除灰度 */
-    opacity: 1; /* 恢复不透明 */
-    transform: scale(1.05); /* 轻微缩放 */
-    border-radius: 5px; /* hover调整圆角 */
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+    border-radius: 5px;
     border-color: #9b59b6;
 }
 
-/* 3. Video iframe style (保留视频响应式) */
+/* 3. Video iframe style (keep video responsive) */
 iframe {
     display: block;
     margin: 30px auto;
