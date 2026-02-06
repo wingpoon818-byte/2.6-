@@ -1,17 +1,66 @@
-<!-- 5.1 HKBU Communication Logo (Polygon → Circle Transform) -->
-<h3>5.1 HKBU Communication Logo (Web Image)</h3>
-<div class="img-container">
-    <img src="https://www.comm.hkbu.edu.hk/wp-content/themes/hkbucomm/images/hkbu-comm-logo.png" height="auto" alt="HKBU Communication Logo" title="HKBU Comm Logo">
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMM7960 - Creative Design Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 align="center">Welcome to COMM7960</h1>
 
-<!-- 5.2 Design Sample Image (Rectangle → Diamond Transform) -->
-<h3>5.2 Web Sample Image (Design Related)</h3>
-<div class="img-container">
-    <img src="https://picsum.photos/800/400?category=design" height="auto" alt="Design Sample Image" title="Web Design Picture">
-</div>
+    <h2>1. Headings and Paragraph</h2>
+    <p>This is my example in paragraphs.</p>
+    <p class="standout">This is a highlighted paragraph (class selector).</p>
+    <p align="center">Center-aligned paragraph (attribute selector).</p>
 
-<!-- Optional: PPT Advanced - Star Shape Image -->
-<h3>5.3 Creative Star Shape Image (PPT Reference)</h3>
-<div class="img-container img-star">
-    <img src="https://picsum.photos/800/400?category=ai" height="auto" alt="AI Design Image" title="AI Creative Image">
-</div>
+    <h2>2. List</h2>
+    <ol>
+        <li>Week1 - HTML Basics</li>
+        <li class="standout">Week2 - CSS Introduction</li>
+        <li>Week3 - CSS Selectors</li>
+    </ol>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+    </ul>
+
+    <h2>3. Media Elements</h2>
+    <!-- 5.1 HKBU Logo (creative shape + animation) -->
+    <h3>5.1 HKBU Communication Logo (Web Image)</h3>
+    <div class="img-container">
+        <img src="https://www.comm.hkbu.edu.hk/wp-content/themes/hkbucomm/images/hkbu-comm-logo.png" 
+             alt="HKBU Communication Logo" title="HKBU Comm Logo">
+    </div>
+
+    <!-- 5.2 Design Image (diamond transform) -->
+    <h3>5.2 Web Sample Image (Design Related)</h3>
+    <div class="img-container">
+        <img src="https://picsum.photos/800/400?category=design" 
+             alt="Design Sample Image" title="Web Design Picture">
+    </div>
+
+    <!-- 5.3 Embedded Video (RETAINED, responsive style) -->
+    <h3>5.3 Embedded YouTube Video</h3>
+    <iframe 
+        src="https://www.youtube.com/embed/9wYI9nY5888"
+        title="AI for Media Design Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+
+    <h2>4. Table</h2>
+    <table border="1">
+        <caption>Courses of HKBU Communication</caption>
+        <tr>
+            <th>Course Code</th>
+            <th>Course Title</th>
+        </tr>
+        <tr>
+            <td>COMM7960</td>
+            <td>AI for Interactive Media Design</td>
+        </tr>
+    </table>
+</body>
+</html>
