@@ -1,78 +1,17 @@
-/* Core styles (retained as your original) */
-p{
-	color: red;
-	font-size: 20px;
-}
+<!-- 5.1 HKBU Communication Logo (Polygon → Circle Transform) -->
+<h3>5.1 HKBU Communication Logo (Web Image)</h3>
+<div class="img-container">
+    <img src="https://www.comm.hkbu.edu.hk/wp-content/themes/hkbucomm/images/hkbu-comm-logo.png" height="auto" alt="HKBU Communication Logo" title="HKBU Comm Logo">
+</div>
 
-p, ul, ol {
-	color: black;
-}
+<!-- 5.2 Design Sample Image (Rectangle → Diamond Transform) -->
+<h3>5.2 Web Sample Image (Design Related)</h3>
+<div class="img-container">
+    <img src="https://picsum.photos/800/400?category=design" height="auto" alt="Design Sample Image" title="Web Design Picture">
+</div>
 
-.standout, .bold_text {
-	color: red;
-	font-weight: bold;
-}
-
-p[align] {
-	color: red;
-}
-
-p[align="center"] {
-	color: blue;
-	font-size: 24px;
-	font-weight: 700;
-}
-
-/* ========== PPT-Required: Creative Image Shape & 3D Transformations ========== */
-/* Base container for image shape transformations */
-.img-container {
-    width: 50%;
-    margin: 30px auto;
-    overflow: hidden;
-    /* Initial polygon shape (PPT classic creative shape) */
-    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-    transition: all 0.8s ease;
-}
-
-/* Base styles for all images */
-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    /* 3D perspective for realistic rotation */
-    transform: perspective(800px);
-    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* 1. HKBU Logo: Hover → Circle + 3D Rotation (PPT shape switch) */
-img[alt*="HKBU"] {
-    filter: grayscale(100%); /* Initial black-white for contrast */
-}
-.img-container:hover img[alt*="HKBU"] {
-    filter: grayscale(0%);
-    /* 3D Y-axis rotation + scale (dramatic visual change) */
-    transform: perspective(800px) rotateY(180deg) scale(1.1);
-}
-/* Container switches to circle on hover */
-.img-container:hover {
-    clip-path: circle(50% at 50% 50%);
-}
-
-/* 2. Design Image: Hover → Diamond + Skew Transform (PPT creative shape) */
-img[alt*="Design"] {
-    border: 5px solid #005ea5;
-}
-img[alt*="Design"]:hover {
-    /* Diamond transform + 3D skew (strong visual impact) */
-    transform: perspective(800px) rotate(45deg) skew(-10deg, -5deg) scale(1.08);
-    border-color: #9b59b6;
-    filter: hue-rotate(30deg); /* Color shift (AI-themed effect) */
-}
-
-/* Optional: Star shape (PPT advanced creativity) */
-.img-star {
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-}
-.img-star:hover img {
-    transform: perspective(800px) rotateX(360deg) scale(1.1);
-}
+<!-- Optional: PPT Advanced - Star Shape Image -->
+<h3>5.3 Creative Star Shape Image (PPT Reference)</h3>
+<div class="img-container img-star">
+    <img src="https://picsum.photos/800/400?category=ai" height="auto" alt="AI Design Image" title="AI Creative Image">
+</div>
