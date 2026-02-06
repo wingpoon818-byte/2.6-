@@ -58,14 +58,29 @@ img[alt*="HKBU"] {
     box-shadow: 0 0 25px rgba(0, 94, 165, 0.4);
 }
 
-/* 2. Design Image: Diamond + color shift (PPT creative shape) */
+/* 2. Design Image (5.2): Rounded + Transparent + Grayscale + Hover Transform (PPT要求) */
 img[alt*="Design"] {
     border: 3px solid #9b59b6;
+    /* 圆角效果（PPT要求） */
+    border-radius: 20px;
+    /* 半透明效果（PPT要求，0.8为半透明） */
+    opacity: 0.8;
+    /* 灰度滤镜（PPT要求，50%灰度） */
+    filter: grayscale(50%);
+    /* 取消原有旋转/斜切，仅保留PPT要求的变换 */
+    transition: all 0.3s ease;
 }
 img[alt*="Design"]:hover {
-    /* Diamond transform (rotate 45°) + skew + color change */
-    transform: perspective(1000px) rotate(45deg) skew(-8deg, -3deg) scale(1.1);
-    filter: hue-rotate(45deg) brightness(1.05);
+    /* 移除灰度（PPT要求） */
+    filter: grayscale(0%);
+    /* 恢复完全不透明（PPT要求） */
+    opacity: 1;
+    /* 轻微缩放变换（PPT要求的hover交互） */
+    transform: scale(1.05);
+    /* hover时调整圆角（增强交互） */
+    border-radius: 5px;
+    /* 保留边框颜色，移除多余斜切/旋转 */
+    border-color: #9b59b6;
 }
 
 /* 3. Video iframe style (keep video responsive) */
