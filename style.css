@@ -1,3 +1,4 @@
+
 p{
 	color: red;
 	font-size: 20px;
@@ -7,21 +8,37 @@ p, ul, ol {
 	color: black;
 }
 
-.standout, .bold_text
-{
+.standout, .bold_text {
+	color: red;
+	font-weight: bold; /* 新增加粗，更醒目 */
+}
+
+p[align] {
 	color: red;
 }
 
-p[align]
-{
-	color: red;
-}
-
-p[align="center"]
-{
+p[align="center"] {
 	color: blue;
+	font-size: 24px; /* 加大字号，突出居中段落 */
+	font-weight: 700; /* 加粗 */
 }
 
-.image1:hover{
-transform: translate(30px, 30px);
+/* 优化image1的hover效果（丝滑过渡+多维度变换） */
+.image1:hover {
+	transform: translate(10px, 10px) scale(1.05); /* 位移+轻微缩放 */
+	transition: all 0.3s ease; /* 过渡动画，不生硬 */
+	cursor: pointer; /* 鼠标变指针，交互更友好 */
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 新增阴影，有层次感 */
+}
+
+/* 新增：给所有图片加基础美化（贴合PPT创意要求） */
+img {
+	border-radius: 8px; /* 圆角，避免生硬 */
+	border: 2px solid #fff; /* 白色边框，突出图片 */
+}
+
+/* 新增：港浸会Logo专属效果（课程主题关联） */
+img[alt*="HKBU"]:hover {
+	filter: grayscale(0%); /* hover取消黑白，呼应AI色彩生成 */
+	transform: scale(1.1); /* 只放大，不位移，突出Logo */
 }
