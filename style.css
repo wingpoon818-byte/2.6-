@@ -1,4 +1,4 @@
-
+/* Core styles (retained as your original) */
 p{
 	color: red;
 	font-size: 20px;
@@ -10,7 +10,7 @@ p, ul, ol {
 
 .standout, .bold_text {
 	color: red;
-	font-weight: bold; /* 新增加粗，更醒目 */
+	font-weight: bold;
 }
 
 p[align] {
@@ -19,26 +19,60 @@ p[align] {
 
 p[align="center"] {
 	color: blue;
-	font-size: 24px; /* 加大字号，突出居中段落 */
-	font-weight: 700; /* 加粗 */
+	font-size: 24px;
+	font-weight: 700;
 }
 
-/* 优化image1的hover效果（丝滑过渡+多维度变换） */
-.image1:hover {
-	transform: translate(10px, 10px) scale(1.05); /* 位移+轻微缩放 */
-	transition: all 0.3s ease; /* 过渡动画，不生硬 */
-	cursor: pointer; /* 鼠标变指针，交互更友好 */
-	box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 新增阴影，有层次感 */
+/* ========== PPT-Required: Creative Image Shape & 3D Transformations ========== */
+/* Base container for image shape transformations */
+.img-container {
+    width: 50%;
+    margin: 30px auto;
+    overflow: hidden;
+    /* Initial polygon shape (PPT classic creative shape) */
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    transition: all 0.8s ease;
 }
 
-/* 新增：给所有图片加基础美化（贴合PPT创意要求） */
+/* Base styles for all images */
 img {
-	border-radius: 8px; /* 圆角，避免生硬 */
-	border: 2px solid #fff; /* 白色边框，突出图片 */
+    width: 100%;
+    height: auto;
+    display: block;
+    /* 3D perspective for realistic rotation */
+    transform: perspective(800px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* 新增：港浸会Logo专属效果（课程主题关联） */
-img[alt*="HKBU"]:hover {
-	filter: grayscale(0%); /* hover取消黑白，呼应AI色彩生成 */
-	transform: scale(1.1); /* 只放大，不位移，突出Logo */
+/* 1. HKBU Logo: Hover → Circle + 3D Rotation (PPT shape switch) */
+img[alt*="HKBU"] {
+    filter: grayscale(100%); /* Initial black-white for contrast */
+}
+.img-container:hover img[alt*="HKBU"] {
+    filter: grayscale(0%);
+    /* 3D Y-axis rotation + scale (dramatic visual change) */
+    transform: perspective(800px) rotateY(180deg) scale(1.1);
+}
+/* Container switches to circle on hover */
+.img-container:hover {
+    clip-path: circle(50% at 50% 50%);
+}
+
+/* 2. Design Image: Hover → Diamond + Skew Transform (PPT creative shape) */
+img[alt*="Design"] {
+    border: 5px solid #005ea5;
+}
+img[alt*="Design"]:hover {
+    /* Diamond transform + 3D skew (strong visual impact) */
+    transform: perspective(800px) rotate(45deg) skew(-10deg, -5deg) scale(1.08);
+    border-color: #9b59b6;
+    filter: hue-rotate(30deg); /* Color shift (AI-themed effect) */
+}
+
+/* Optional: Star shape (PPT advanced creativity) */
+.img-star {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.img-star:hover img {
+    transform: perspective(800px) rotateX(360deg) scale(1.1);
 }
